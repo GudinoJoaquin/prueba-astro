@@ -1,18 +1,29 @@
 ---
-import background from '../assets/background.svg';
+import background from "../assets/background.svg";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body class="bg-[#171717] text-white grid min-h-screen grid-rows-[auto_1fr_auto]">
-    <img id="background" src={background.src} alt="" fetchpriority="high" class="fixed top-[0px] left-[0px] w-[100%] h-[100%] z-[-1] blur-[100px]"/>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="google-site-verification"
+      content="jE4ky59w5lt7mpBCazhRzff_ppFPJnpzXOypR5vZGPM"
+    />
+    <title>DevLib</title>
+  </head>
+  <body
+    class="bg-[#171717] text-white grid min-h-screen grid-rows-[auto_1fr_auto]"
+  >
+    <img
+      id="background"
+      src={background.src}
+      alt=""
+      fetchpriority="high"
+      class="fixed top-[0px] left-[0px] w-[100%] h-[100%] z-[-1] blur-[100px]"
+    />
+    <slot />
+  </body>
 </html>
