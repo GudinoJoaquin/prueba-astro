@@ -1,0 +1,85 @@
+---
+import ReactIcon from "../assets/icons/ReactIcon.astro";
+import VueIcon from "../assets/icons/VueIcon.astro";
+import AstroIcon from "../assets/icons/AstroIcon.astro";
+import PreactIcon from "../assets/icons/PreactIcon.astro";
+import SvelteIcon from "../assets/icons/SvelteIcon.astro";
+import SolidIcon from "../assets/icons/SolidIcon.astro";
+import NextIcon from "../assets/icons/NextIcon.astro";
+import NuxtIcon from "../assets/icons/NuxtIcon.astro";
+import ReduxIcon from "../assets/icons/ReduxIcon.astro";
+import ThreeIcon from "../assets/icons/ThreeIcon.astro";
+
+const frameworks = [
+  {
+    icon: ReactIcon,
+    name: "React",
+    url: "https://es.react.dev/learn",
+  },
+  {
+    icon: VueIcon,
+    name: "Vue",
+    url: "https://vuejs.org/guide/introduction.html",
+  },
+  {
+    icon: AstroIcon,
+    name: "Astro",
+    size: 70,
+    url: "https://docs.astro.build/en/basics/astro-pages/",
+  },
+  {
+    icon: PreactIcon,
+    name: "Preact",
+    url: "https://preactjs.com/guide/v10/getting-started",
+  },
+  {
+    icon: SvelteIcon,
+    name: "Svelte",
+    size: 80,
+    url: "https://svelte.dev/docs/svelte/overview",
+  },
+  {
+    icon: SolidIcon,
+    name: "Solid",
+    url: "https://docs.solidjs.com/quick-start",
+  },
+  {
+    icon: NextIcon,
+    name: "Next",
+    url: "https://nextjs.org/docs",
+  },
+  {
+    icon: NuxtIcon,
+    name: "Nuxt",
+    url: "https://nuxt.com/docs/getting-started/installation",
+  },
+  {
+    icon: ReduxIcon,
+    name: "Redux",
+    url: "https://redux.js.org/introduction/getting-started",
+  },
+  {
+    icon: ThreeIcon,
+    name: "Three.js",
+    url: "https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene",
+  },
+];
+---
+
+<div class="mt-[40px] mx-[20px] gap-[20px] grid grid-cols-2 grid-rows-1">
+  {
+    frameworks.map((framework) => (
+      <article
+        onclick="redirect()"
+        class="bg-[#202020] border border-[#505050] py-[20px] rounded-[10px] flex flex-col items-center justify-center"
+      >
+        <a href={framework.url} target="_blank">
+          <framework.icon size={framework?.size || 100} />
+          <p class={` font-semibold text-[20px] mt-[20px] text-center`}>
+            {framework.name}
+          </p>
+        </a>
+      </article>
+    ))
+  }
+</div>

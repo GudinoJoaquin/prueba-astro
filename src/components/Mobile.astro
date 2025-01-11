@@ -1,0 +1,40 @@
+---
+import KotlinIcon from "../assets/icons/KotlinIcon.astro";
+import FlutterIcon from "../assets/icons/FlutterIcon.astro";
+import DartIcon from "../assets/icons/DartIcon.astro";
+import SwiftIcon from "../assets/icons/SwiftIcon.astro";
+
+const frameworks = [
+  {
+    icon: FlutterIcon,
+    name: "Flutter",
+    size: 90,
+    url: "https://docs.flutter.dev/",
+  },
+  {
+    icon: DartIcon,
+    name: "Dart",
+    url: "https://dart.dev/guides",
+  },
+  {
+    icon: SwiftIcon,
+    name: "Swift",
+    url: "https://www.swift.org/documentation/",
+  },
+];
+---
+
+<div class="mt-[40px] mx-[20px] gap-[20px] grid grid-cols-2 grid-rows-1">
+  {
+    frameworks.map((framework) => (
+      <article class="bg-[#202020] border border-[#505050] py-[20px] rounded-[10px] flex flex-col items-center justify-center">
+        <a href={framework.url} target="_blank">
+          <framework.icon size={framework?.size || 100} />
+          <p class={` font-semibold text-[20px] mt-[20px] text-center`}>
+            {framework.name}
+          </p>
+        </a>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,61 @@
+---
+// Importa los nuevos SVG
+import astro from "../assets/astro.svg";
+import angular from "../assets/angular.svg";
+import next from "../assets/next.svg";
+import vue from "../assets/vue.svg";
+import redux from "../assets/redux.svg";
+import solid from "../assets/solid.svg";
+import svelte from "../assets/svelte.svg";
+import three from "../assets/three.svg";
+import react from "../assets/react.svg";
+import preact from "../assets/preact.svg";
+import nuxt from "../assets/nuxt.svg";
+
+---
+<div class="">
+  <div class="logos animate-slide-in-right">
+    <img src={astro.src} alt="Astro Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={angular.src} alt="Angular Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={next.src} alt="Next.js Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={vue.src} alt="Vue Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={redux.src} alt="Redux Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={solid.src} alt="SolidJS Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={svelte.src} alt="Svelte Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={three.src} alt="Three.js Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={react.src} alt="React Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={preact.src} alt="Preact Logo" class="w-[100px]" />
+  </div>
+  <div class="logos hidden animate-slide-in-right">
+    <img src={nuxt.src} alt="Nuxt Logo" class="w-[100px]" />
+  </div>
+</div>
+
+<script type="module">
+  const logos = document.querySelectorAll(".logos");
+  let currentIndex = 0;
+  function changeLogo() {
+    logos[currentIndex].classList.add("hidden", "animate-slide-in-right");
+    currentIndex = (currentIndex + 1) % logos.length;
+    logos[currentIndex].classList.remove("hidden");
+  }
+  setInterval(changeLogo, 3000);
+</script>

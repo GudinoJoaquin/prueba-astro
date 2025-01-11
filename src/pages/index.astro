@@ -1,0 +1,124 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import MenuIcon from "../assets/icons/MenuIcon.astro";
+import LogoSlider from "../components/LogoSlider.astro";
+import Front from "../components/Front.astro";
+import Back from "../components/Back.astro";
+import Mobile from "../components/Mobile.astro";
+import Css from "../components/Css.astro";
+---
+
+<Layout>
+  <header
+    class="bg-[#1b1b1b46] h-[40px] flex items-center justify-center mt-[10px]"
+  >
+    <h1 class="ml-[5px] font-bold text-[30px]">DevLib</h1>
+  </header>
+  <body class="">
+    <main>
+      <section class="flex flex-col mt-[70px] items-center">
+        <div class="h-[160px]">
+          <LogoSlider />
+        </div>
+        <p class="text-wrap text-center mx-[20px]">
+          Explora las documentaciones esenciales de los frameworks más
+          destacados en frontend, backend, mobile y CSS. Encuentra guías,
+          ejemplos y recursos clave para potenciar tus proyectos y mejorar tu
+          flujo de desarrollo.
+        </p>
+      </section>
+      <section class="mt-[70px]">
+        <div class="flex justify-center gap-[10px] flex-wrap">
+          <p
+            class="bg-[#202020] text-white/70 border border-white/70 py-[2px] px-[10px] rounded-[5px]"
+            id="frontBtn"
+          >
+            Frontend
+          </p>
+          <p
+            class="bg-[#202020] text-white/70 border border-white/70] py-[2px] px-[10px] rounded-[5px]"
+            id="backBtn"
+          >
+            Backend
+          </p>
+          <p
+            class="bg-[#202020] text-white/70 border border-white/70] py-[2px] px-[10px] rounded-[5px]"
+            id="mobileBtn"
+          >
+            Mobile
+          </p>
+          <p
+            class="bg-[#202020] text-white/70 border border-white/70] py-[2px] px-[10px] rounded-[5px]"
+            id="cssBtn"
+          >
+            CSS
+          </p>
+        </div>
+        <div id="front" class="">
+          <Front />
+        </div>
+        <div id="back" class="hidden">
+          <Back />
+        </div>
+        <div id="mobile" class="hidden">
+          <Mobile />
+        </div>
+        <div id="css" class="hidden">
+          <Css />
+        </div>
+      </section>
+    </main>
+  </body>
+  <footer
+    class="bg-[#1b1b1f] h-[100px] mt-[20px] flex flex-col items-center justify-center"
+  >
+    <p>Gudi</p>
+    <p>© Todos los derechos reservados</p>
+    <p>
+      Github: <a href="https://github.com/GudinoJoaquin" class="underline"
+        >GudinoJoaquin</a
+      >
+    </p>
+  </footer>
+
+  <script>
+    const frontBtn = document.getElementById("frontBtn");
+    const backBtn = document.getElementById("backBtn");
+    const mobileBtn = document.getElementById("mobileBtn");
+    const cssBtn = document.getElementById("cssBtn");
+
+    const front = document.getElementById("front");
+    const back = document.getElementById("back");
+    const mobile = document.getElementById("mobile");
+    const css = document.getElementById("css");
+
+    frontBtn?.addEventListener("click", () => {
+      front?.classList.remove("hidden");
+      back?.classList.add("hidden");
+      mobile?.classList.add("hidden");
+      css?.classList.add("hidden");
+    });
+
+    backBtn?.addEventListener("click", () => {
+      front?.classList.add("hidden");
+      back?.classList.remove("hidden");
+      mobile?.classList.add("hidden");
+      css?.classList.add("hidden");
+    });
+
+    mobileBtn?.addEventListener("click", () => {
+      front?.classList.add("hidden");
+      back?.classList.add("hidden");
+      mobile?.classList.remove("hidden");
+      css?.classList.add("hidden");
+    });
+
+    cssBtn?.addEventListener("click", () => {
+      front?.classList.add("hidden");
+      back?.classList.add("hidden");
+      mobile?.classList.add("hidden");
+      css?.classList.remove("hidden");
+    });
+  </script>
+</Layout>
